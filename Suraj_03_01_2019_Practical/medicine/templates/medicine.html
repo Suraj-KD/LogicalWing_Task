@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Medicine Type : {{ medicine_type }}</title>
+</head>
+<body>
+    <ul>
+        <strong>{{ medicine_type }}</strong>
+        <li>{{ medicine.created }}</li>
+        <li>{{ medicine.modified }}</li>
+    </ul>
+    {% if medicine_detail_list %}
+        <ul>
+            {% for medicine_detail in medicine_detail_list %}
+                <strong>{{ medicine_detail.name }}</strong>
+                <li>Created  : {{ medicine_detail.created }}</li>
+                <li>Modified : {{ medicine_detail.modified }}</li>
+                <li>Expired : {{ medicine_detail.expired }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <a href="add_medicine_detail">Add New Medicine Details</a>
+</body>
+</html>

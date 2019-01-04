@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index Page</title>
+</head>
+<body>
+
+    {% if medicine_type_list %}
+        <strong>Latest Medicine Type Added</strong>
+        <ul>
+            {% for medicine_type in medicine_type_list %}
+            <li><a href="medicine/{{ medicine_type }}">{{ medicine_type }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% if medicine_detail_list %}
+        <strong>Latest Medicine Detail Added</strong>
+        <ul>
+            {% for medicine_detail in medicine_detail_list %}
+                <li>{{ medicine_detail }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <a href="medicine/add_medicine_type">Add New Medicine Type</a>
+</body>
+</html>

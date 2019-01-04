@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Medicine Type</title>
+</head>
+<body>
+    <div>
+        <center>
+            <form id="add_medicine_type" method="post">
+                {% csrf_token %}
+                {% for field in form.visible_fields %}
+                    <tr>
+                        <div>
+                            <td>{{ field.errors }}</td>
+                            <td>{{ field.help_text }}</td>
+                            <td>{{ field  }}</td>
+                        </div>
+                    </tr>
+                {% endfor %}
+                <input type="submit" name="Submit" value="Submit">
+            </form>
+        </center>
+    </div>
+</body>
+</html>
